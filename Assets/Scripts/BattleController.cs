@@ -12,17 +12,21 @@ public class BattleController : MonoBehaviour
 
     [SerializeField] SpriteRenderer background;
 
-    private int ActiveBattleNumber;
+    private BattleConfig activeBattleConfig;
     private string[] battlers;
 
     private void Start() {
-        // Get the battlenumber where we can load the right battle config with (name, monster setup)
-        ActiveBattleNumber = FindObjectOfType<GameSession>().GetActiveBattleNumber();
-
+        SetActiveBattleConfig();
         GetListOfCharactersFromSaveFile();
         LoadCharacters();
         LoadEnemies();
         LoadBackground();
+    }
+
+    private void SetActiveBattleConfig() {
+        // Get the battlenumber where we can load the right battle config with (name, monster setup)
+        int activeBattleNumber = PlayerPrefs.GetInt("active_battle");
+        activeBattleConfig = battleConfigs[activeBattleNumber - 1];
     }
 
     private void GetListOfCharactersFromSaveFile() {
@@ -53,12 +57,12 @@ public class BattleController : MonoBehaviour
     }
 
     private void LoadEnemies() {
-        enemyPrefabs[0].SetEnemyStats(battleConfigs[ActiveBattleNumber - 1].GetEnemy1());
-        enemyPrefabs[1].SetEnemyStats(battleConfigs[ActiveBattleNumber - 1].GetEnemy2());
-        enemyPrefabs[2].SetEnemyStats(battleConfigs[ActiveBattleNumber - 1].GetEnemy3());
+        enemyPrefabs[0].SetEnemyStats(activeBattleConfig.GetEnemy1());
+        enemyPrefabs[1].SetEnemyStats(activeBattleConfig.GetEnemy2());
+        enemyPrefabs[2].SetEnemyStats(activeBattleConfig.GetEnemy3());
     }
 
     private void LoadBackground() {
-        background.sprite = battleConfigs[ActiveBattleNumber - 1].GetBackgroundSprite();
+        background.sprite = activeBattleConfig.GetBackgroundSprite();
     }
 }
