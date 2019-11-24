@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float health = 100f;
-    [SerializeField] float mana = 30f;
-
-    [SerializeField] float attackStrength = 15f;
-    [SerializeField] float attackSpeed = 3f;
+    private string enemyName;
+    private float currentHealth;
+    private float maxHealth;
+    private float currentMana;
+    private float maxMana;
+    private float strength;
+    private float magic;
+    private float speed;
+    private float vitality;
+    private float agility;
 
     private void Start()
     {
@@ -17,9 +22,9 @@ public class Enemy : MonoBehaviour
 
     IEnumerator AttackPlayerCoroutine() {
         while(true) {
-            yield return new WaitForSeconds(attackSpeed);
+            yield return new WaitForSeconds(speed);
             var targetPlayer = GetTargetPlayer();
-            targetPlayer.DamagePlayer(attackStrength);
+            targetPlayer.DamagePlayer(strength);
         }
     }
 
@@ -29,14 +34,39 @@ public class Enemy : MonoBehaviour
     }
 
     public void DamageEnemy(float damage) {
-        health -= damage;
+        currentHealth -= damage;
 
-        if(health <= 0) {
+        if(currentHealth <= 0) {
             Destroy(gameObject);
         }
     }
 
     public void HealEnemy(float health) {
-        health += health;
+        currentHealth += health;
     }
+
+    public void SetEnemyStats(EnemyConfig config) {
+        GetComponent<SpriteRenderer>().sprite = config.GetBattleSprite();
+        enemyName = config.GetName();
+        currentHealth = config.GetHealth();
+        maxHealth = config.GetHealth();
+        strength = config.GetStrength();
+        magic = config.GetMagic();
+        speed = config.GetSpeed();
+        vitality = config.GetVitality();
+        agility = config.GetAgility();
+    }
+
+    // public void SetStartingTextFields() {
+    //     characterNameText.text = characterName.ToString();
+    //     currentHealthText.text = currentHealth.ToString();
+    //     maxHealthText.text = maxHealth.ToString();
+    // }
+
+    // public void DestroyPlayer() {
+    //     Destroy(characterNameText);
+    //     Destroy(maxHealthText);
+    //     Destroy(currentHealthText);
+    //     Destroy(gameObject);
+    // }
 }

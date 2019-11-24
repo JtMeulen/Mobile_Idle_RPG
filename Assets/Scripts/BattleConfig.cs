@@ -9,15 +9,15 @@ public class BattleConfig : ScriptableObject
     [SerializeField] int gold;
     [SerializeField] int experience;
     [SerializeField] Sprite backgroundSprite;
-    [SerializeField] Enemy enemy1;
-    [SerializeField] Enemy enemy2;
-    [SerializeField] Enemy enemy3;
+    [SerializeField] EnemyConfig enemy1;
+    [SerializeField] EnemyConfig enemy2;
+    [SerializeField] EnemyConfig enemy3;
 
     public string GetBattleName() { return battleName; }
     public float GetGold() { return gold; }
     public float GetExperience() { return experience; }
     public Sprite GetBackgroundSprite() { return backgroundSprite; }
-    public Enemy GetEnemy1() { return enemy1; }
-    public Enemy GetEnemy2() { return enemy2; }
-    public Enemy GetEnemy3() { return enemy3; }
+    public EnemyConfig GetEnemy1() { return enemy1; }
+    public EnemyConfig GetEnemy2() { return enemy2; }
+    public EnemyConfig GetEnemy3() { return enemy3; }
 }

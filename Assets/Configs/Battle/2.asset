@@ -16,6 +16,6 @@ MonoBehaviour:
   gold: 10
   experience: 40
   backgroundSprite: {fileID: 21300000, guid: e8ce9440d19b84751a3d4b4663c8beaf, type: 3}
-  enemy1: {fileID: 0}
-  enemy2: {fileID: 0}
-  enemy3: {fileID: 0}
+  enemy1: {fileID: 11400000, guid: c03f2a5bf366c4503b3e9ac8b2053570, type: 2}
+  enemy2: {fileID: 11400000, guid: 3f917f30fa2f742a8a08d02dc8fc7eb3, type: 2}
+  enemy3: {fileID: 11400000, guid: c03f2a5bf366c4503b3e9ac8b2053570, type: 2}

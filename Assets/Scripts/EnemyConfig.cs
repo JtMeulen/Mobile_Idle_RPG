@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyConfig : MonoBehaviour
+[CreateAssetMenu(menuName = "Enemy Config")]
+public class EnemyConfig : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] string enemyName;
+    [SerializeField] float health;
+    [SerializeField] float strength;
+    [SerializeField] float magic;
+    [SerializeField] float speed;
+    [SerializeField] float vitality;
+    [SerializeField] float agility;
+    [SerializeField] Sprite battleSprite;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string GetName() { return enemyName; }
+    public float GetHealth() { return health; }
+    public float GetStrength() { return strength; }
+    public float GetMagic() { return magic; }
+    public float GetSpeed() { return speed; }
+    public float GetVitality() { return vitality; }
+    public float GetAgility() { return agility; }
+    public Sprite GetBattleSprite() { return battleSprite; }
 }

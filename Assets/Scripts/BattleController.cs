@@ -6,6 +6,7 @@ using UnityEngine;
 public class BattleController : MonoBehaviour
 {
     [SerializeField] Player[] playerPrefabs;
+    [SerializeField] Enemy[] enemyPrefabs;
     [SerializeField] PlayerConfig[] playerConfigs;
     [SerializeField] BattleConfig[] battleConfigs;
 
@@ -20,11 +21,11 @@ public class BattleController : MonoBehaviour
 
         GetListOfCharactersFromSaveFile();
         LoadCharacters();
+        LoadEnemies();
         LoadBackground();
     }
 
-    private void GetListOfCharactersFromSaveFile()
-    {
+    private void GetListOfCharactersFromSaveFile() {
         battlers = new string[] {
             PlayerPrefs.GetString("battler_1"),
             PlayerPrefs.GetString("battler_2"),
@@ -49,6 +50,12 @@ public class BattleController : MonoBehaviour
                 }
             }
         };
+    }
+
+    private void LoadEnemies() {
+        enemyPrefabs[0].SetEnemyStats(battleConfigs[ActiveBattleNumber - 1].GetEnemy1());
+        enemyPrefabs[1].SetEnemyStats(battleConfigs[ActiveBattleNumber - 1].GetEnemy2());
+        enemyPrefabs[2].SetEnemyStats(battleConfigs[ActiveBattleNumber - 1].GetEnemy3());
     }
 
     private void LoadBackground() {
