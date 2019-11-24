@@ -2,15 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleController : MonoBehaviour
 {
+    [Header("Configs and Prefabs")]
     [SerializeField] Player[] playerPrefabs;
     [SerializeField] Enemy[] enemyPrefabs;
     [SerializeField] PlayerConfig[] playerConfigs;
     [SerializeField] BattleConfig[] battleConfigs;
 
+    [Header("GameObjects")]
     [SerializeField] SpriteRenderer background;
+    [SerializeField] Text titleText;
 
     private BattleConfig activeBattleConfig;
     private string[] battlers;
@@ -21,17 +25,18 @@ public class BattleController : MonoBehaviour
         LoadCharacters();
         LoadEnemies();
         LoadBackground();
+        LoadBattleTitle();
     }
 
     private void SetActiveBattleConfig() {
         // Get the battlenumber where we can load the right battle config with (name, monster setup)
-        int activeBattleNumber = PlayerPrefs.GetInt("active_battle");
+        int activeBattleNumber = PlayerPrefs.GetInt("active_battle", 1); // default value, incase something goes wrong
         activeBattleConfig = battleConfigs[activeBattleNumber - 1];
     }
 
     private void GetListOfCharactersFromSaveFile() {
         battlers = new string[] {
-            PlayerPrefs.GetString("battler_1"),
+            PlayerPrefs.GetString("battler_1", "Warrior"), // default value, incase something goes wrong
             PlayerPrefs.GetString("battler_2"),
             PlayerPrefs.GetString("battler_3"),
             PlayerPrefs.GetString("battler_4"),
@@ -64,5 +69,9 @@ public class BattleController : MonoBehaviour
 
     private void LoadBackground() {
         background.sprite = activeBattleConfig.GetBackgroundSprite();
+    }
+
+    private void LoadBattleTitle() {
+        titleText.text = activeBattleConfig.GetBattleName();
     }
 }
