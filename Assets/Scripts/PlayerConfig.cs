@@ -13,6 +13,8 @@ public class PlayerConfig : ScriptableObject
     [SerializeField] float speed;
     [SerializeField] float vitality;
     [SerializeField] float agility;
+    [SerializeField] Sprite battleSprite;
+    [SerializeField] Sprite avatar;
 
     public string GetName() { return characterName; }
     public float GetHealth() { return health; }
@@ -22,4 +24,6 @@ public class PlayerConfig : ScriptableObject
     public float GetSpeed() { return speed; }
     public float GetVitality() { return vitality; }
     public float GetAgility() { return agility; }
+    public Sprite GetBattleSprite() { return battleSprite; }
+    public Sprite GetAvatar() { return avatar; }
 }

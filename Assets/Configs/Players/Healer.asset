@@ -20,3 +20,6 @@ MonoBehaviour:
   speed: 6
   vitality: 3
   agility: 4
+  battleSprite: {fileID: 3202766191769381766, guid: 94518e1296fa04fc8be01f1c3edb4e67,
+    type: 3}
+  avatar: {fileID: 3420167215148289656, guid: 94518e1296fa04fc8be01f1c3edb4e67, type: 3}

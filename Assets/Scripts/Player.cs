@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
     }
 
     public void SetPlayerStats(PlayerConfig config) {
+        GetComponent<SpriteRenderer>().sprite = config.GetBattleSprite();
         characterName = config.GetName();
         currentHealth = config.GetHealth();
         maxHealth = config.GetHealth();
@@ -75,5 +76,14 @@ public class Player : MonoBehaviour
         maxHealthText.text = maxHealth.ToString();
         currentManaText.text = currentMana.ToString();
         maxManaText.text = maxMana.ToString();
+    }
+
+    public void DestroyPlayer() {
+        Destroy(characterNameText);
+        Destroy(maxHealthText);
+        Destroy(currentHealthText);
+        Destroy(maxManaText);
+        Destroy(currentManaText);
+        Destroy(gameObject);
     }
 }

@@ -22,21 +22,26 @@ public class BattleController : MonoBehaviour
   private void GetListOfCharactersFromSaveFile()
   {
     battlers = new string[] {
-        PlayerPrefs.GetString("character_1_battler"),
-        PlayerPrefs.GetString("character_2_battler"),
-        PlayerPrefs.GetString("character_3_battler"),
-        PlayerPrefs.GetString("character_4_battler"),
-        PlayerPrefs.GetString("character_5_battler")
+        PlayerPrefs.GetString("battler_1"),
+        PlayerPrefs.GetString("battler_2"),
+        PlayerPrefs.GetString("battler_3"),
+        PlayerPrefs.GetString("battler_4"),
+        PlayerPrefs.GetString("battler_5")
     };
   }
 
   private void LoadCharacters() {
         // Player prefabs to be supplied with the right info
         for(int i = 0; i < playerPrefabs.Length; i++) {
-            // loop over the battlers setup to find the right config
-            foreach (var config in playerConfigs) {
-                if(config.name == battlers[i]) {
-                    playerPrefabs[i].SetPlayerStats(config);
+            // check if the player is set, otherwise destroy the gameObject
+            if(String.IsNullOrEmpty(battlers[i])) {
+                playerPrefabs[i].DestroyPlayer();
+            } else {
+                // loop over the battlers setup to find the right config
+                foreach (var config in playerConfigs) {
+                    if(config.name == battlers[i]) {
+                        playerPrefabs[i].SetPlayerStats(config);
+                    }
                 }
             }
         };

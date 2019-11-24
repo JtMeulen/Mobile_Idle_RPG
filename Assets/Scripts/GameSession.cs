@@ -25,19 +25,22 @@ public class GameSession : MonoBehaviour
     }
 
     public void SaveBattler1(string name) {
-        Debug.Log("Saving: " + name);
-        PlayerPrefs.SetString("character_1_battler", name);
+        PlayerPrefs.SetString("battler_1", name);
     }
     public void SaveBattler2(string name) {
-        PlayerPrefs.SetString("character_2_battler", name);
+        PlayerPrefs.SetString("battler_2", name);
     }
     public void SaveBattler3(string name) {
-        PlayerPrefs.SetString("character_3_battler", name);
+        PlayerPrefs.SetString("battler_3", name);
     }
     public void SaveBattler4(string name) {
-        PlayerPrefs.SetString("character_4_battler", name);
+        PlayerPrefs.SetString("battler_4", name);
     }
     public void SaveBattler5(string name) {
-        PlayerPrefs.SetString("character_5_battler", name);
+        PlayerPrefs.SetString("battler_5", name);
+    }
+
+    public void DeleteSaveData() {
+        PlayerPrefs.DeleteAll();
     }
 }
