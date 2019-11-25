@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadBattle() {
+    public void LoadBattle(int battleNumber) {
+        PlayerPrefs.SetInt("active_battle", battleNumber);
         SceneManager.LoadScene("Battle");
     }
 

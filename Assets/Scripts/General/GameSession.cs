@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour
 {
-    public void SetActiveBattleNumber(int battleNumber) {
-        PlayerPrefs.SetInt("active_battle", battleNumber);
-    }
-
     public void SaveBattler1(string name) {
         PlayerPrefs.SetString("battler_1", name);
     }
