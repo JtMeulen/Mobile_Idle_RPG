@@ -16,7 +16,7 @@ MonoBehaviour:
   health: 600
   strength: 30
   magic: 4
-  speed: 5
+  speed: 2
   vitality: 7
   agility: 2
   battleSprite: {fileID: -7519217156081558956, guid: 6bb3a704f0c4445e9b2604f5bf8ff7f9,

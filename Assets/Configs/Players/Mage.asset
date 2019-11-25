@@ -17,7 +17,7 @@ MonoBehaviour:
   mana: 150
   strength: 3
   magic: 30
-  speed: 5
+  speed: 2
   vitality: 6
   agility: 3
   battleSprite: {fileID: 1043513479171679734, guid: 7fdd03d251d0743ad859bfb094b4db99,

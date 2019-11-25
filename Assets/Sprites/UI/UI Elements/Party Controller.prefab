@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1885880300304415552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1885880300304415554}
+  - component: {fileID: 1885880300304415553}
+  m_Layer: 0
+  m_Name: Party Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1885880300304415554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885880300304415552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1885880300304415553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885880300304415552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c229702ae6a44e809636fd099ba5217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerConfigs:
+  - {fileID: 11400000, guid: a6e0e554b950f4cf785e415e5044815f, type: 2}
+  - {fileID: 11400000, guid: bf11eb5cf907e49a8a11ca2aa11dce2f, type: 2}
+  - {fileID: 11400000, guid: 1d393a173b54144858c1a8dace467a86, type: 2}
+  - {fileID: 11400000, guid: c5b38917ed66349c7870200118d2dddb, type: 2}
+  - {fileID: 11400000, guid: 260ce643e8cfa4bf19f737db30342965, type: 2}
+  playerName: {fileID: 0}
+  className: {fileID: 0}
+  health: {fileID: 0}
+  mana: {fileID: 0}
+  strength: {fileID: 0}
+  magic: {fileID: 0}
+  speed: {fileID: 0}
+  vitality: {fileID: 0}
+  agility: {fileID: 0}
+  activeCharacterContainers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
