@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(speed);
             var targetEnemy = GetTargetEnemy();
             targetEnemy.DamageEnemy(strength);
+            Flash("green");
         }
     }
 
@@ -41,9 +42,32 @@ public class Player : MonoBehaviour
         return allEnemies[Random.Range(0, allEnemies.Length)];
     }
 
+    private void Flash(string color) {
+        StartCoroutine(FlashCharacter(color));
+    }
+
+    IEnumerator FlashCharacter(string color) {
+        Color flashColor;
+
+        if(color == "green") {
+            flashColor = new Color(0,255,0,0.5f);
+        } else if (color == "red") {
+            flashColor = new Color(255,0,0,0.5f);
+        } else {
+            flashColor = new Color(255,255,255,1);
+        }
+
+        GetComponent<SpriteRenderer>().color = flashColor;
+        yield return new WaitForSeconds(0.2f);
+        GetComponent<SpriteRenderer>().color = new Color(255,255,255,1);
+    }
+
+    //*****   PUBLIC FUNCTIONS   *****//
+
     public void DamagePlayer(float damage) {
         currentHealth -= damage;
         currentHealthText.text = currentHealth.ToString();
+        Flash("red");
 
         if(currentHealth <= 0) {
             currentHealthText.text = 0.ToString();
@@ -55,6 +79,8 @@ public class Player : MonoBehaviour
         currentHealth += health;
         currentHealthText.text = currentHealth.ToString();
     }
+
+    //*****   SETTINGS FUNCTIONS   *****//
 
     public void SetPlayerStats(PlayerConfig config) {
         GetComponent<SpriteRenderer>().sprite = config.GetBattleSprite();
