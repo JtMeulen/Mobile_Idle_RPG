@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -15,8 +16,13 @@ public class Enemy : MonoBehaviour
     private float vitality;
     private float agility;
 
+    [SerializeField] Text enemyNameText;
+    [SerializeField] Text maxHealthText;
+    [SerializeField] Text currentHealthText;
+
     private void Start()
     {
+        SetStartingTextFields();
         StartCoroutine(AttackPlayerCoroutine());
     }
 
@@ -35,8 +41,10 @@ public class Enemy : MonoBehaviour
 
     public void DamageEnemy(float damage) {
         currentHealth -= damage;
+        currentHealthText.text = currentHealth.ToString();
 
         if(currentHealth <= 0) {
+            currentHealthText.text = 0.ToString();
             Destroy(gameObject);
         }
     }
@@ -57,16 +65,16 @@ public class Enemy : MonoBehaviour
         agility = config.GetAgility();
     }
 
-    // public void SetStartingTextFields() {
-    //     characterNameText.text = characterName.ToString();
-    //     currentHealthText.text = currentHealth.ToString();
-    //     maxHealthText.text = maxHealth.ToString();
-    // }
+    public void SetStartingTextFields() {
+        enemyNameText.text = enemyName.ToString();
+        currentHealthText.text = currentHealth.ToString();
+        maxHealthText.text = maxHealth.ToString();
+    }
 
-    // public void DestroyPlayer() {
-    //     Destroy(characterNameText);
-    //     Destroy(maxHealthText);
-    //     Destroy(currentHealthText);
-    //     Destroy(gameObject);
-    // }
+    public void DestroyEnemy() {
+        Destroy(enemyNameText);
+        Destroy(maxHealthText);
+        Destroy(currentHealthText);
+        Destroy(gameObject);
+    }
 }
