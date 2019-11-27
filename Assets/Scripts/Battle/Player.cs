@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     private float vitality;
     private float agility;
 
+    // Serialized fields
     [SerializeField] Text characterNameText;
     [SerializeField] Text maxHealthText;
     [SerializeField] Text currentHealthText;
@@ -86,18 +87,19 @@ public class Player : MonoBehaviour
 
     //*****   SETTINGS FUNCTIONS   *****//
 
+    // This is called by the BattleController at the beginning of the battle
     public void SetPlayerStats(PlayerConfig config) {
         GetComponent<SpriteRenderer>().sprite = config.GetBattleSprite();
-        characterName = config.GetName();
-        currentHealth = config.GetHealth();
-        maxHealth = config.GetHealth();
-        currentMana = config.GetMana();
-        maxMana = config.GetMana();
-        strength = config.GetStrength();
-        magic = config.GetMagic();
-        speed = config.GetSpeed();
-        vitality = config.GetVitality();
-        agility = config.GetAgility();
+        characterName   = config.GetName();
+        currentHealth   = config.GetHealth();
+        maxHealth       = config.GetHealth();
+        currentMana     = config.GetMana();
+        maxMana         = config.GetMana();
+        strength        = config.GetStrength();
+        magic           = config.GetMagic();
+        speed           = config.GetSpeed();
+        vitality        = config.GetVitality();
+        agility         = config.GetAgility();
     }
 
     public void SetStartingTextFields() {

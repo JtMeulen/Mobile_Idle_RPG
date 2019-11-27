@@ -17,13 +17,29 @@ public class PlayerConfig : ScriptableObject
     [SerializeField] Sprite avatar;
 
     public string GetName() { return characterName; }
-    public float GetHealth() { return health; }
-    public float GetMana() { return mana; }
-    public float GetStrength() { return strength; }
-    public float GetMagic() { return magic; }
-    public float GetSpeed() { return speed; }
-    public float GetVitality() { return vitality; }
-    public float GetAgility() { return agility; }
+
+    public float GetHealth() {
+        return health * PlayerPrefs.GetInt(characterName + "_level", 1);
+    }
+    public float GetMana() {
+        return mana * PlayerPrefs.GetInt(characterName + "_level", 1);
+    }
+    public float GetStrength() {
+        return strength * PlayerPrefs.GetInt(characterName + "_level", 1);;
+    }
+    public float GetMagic() {
+        return magic * PlayerPrefs.GetInt(characterName + "_level", 1);
+    }
+    public float GetSpeed() {
+        return speed / PlayerPrefs.GetInt(characterName + "_level", 1);
+    }
+    public float GetVitality() {
+        return vitality * PlayerPrefs.GetInt(characterName + "_level", 1);
+    }
+    public float GetAgility() {
+        return agility * PlayerPrefs.GetInt(characterName + "_level", 1);
+    }
+
     public Sprite GetBattleSprite() { return battleSprite; }
     public Sprite GetAvatar() { return avatar; }
 }
