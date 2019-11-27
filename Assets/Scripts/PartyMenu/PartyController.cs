@@ -11,6 +11,7 @@ public class PartyController : MonoBehaviour
     [Header("Text Fields")]
     [SerializeField] Text playerName;
     [SerializeField] Text className;
+    [SerializeField] Text level;
     [SerializeField] Text health;
     [SerializeField] Text mana;
     [SerializeField] Text strength;
@@ -53,6 +54,7 @@ public class PartyController : MonoBehaviour
     private void DisplayPlayerStats() {
         playerName.text = activePlayerConfig.GetName().ToString();
         className.text = "Classname";
+        level.text = PlayerPrefs.GetInt(activePlayerConfig.GetName() + "_level", 1).ToString();
         health.text = activePlayerConfig.GetHealth().ToString();
         mana.text = activePlayerConfig.GetMana().ToString();
         strength.text = activePlayerConfig.GetStrength().ToString();

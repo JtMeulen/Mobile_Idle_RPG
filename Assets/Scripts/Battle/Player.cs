@@ -43,6 +43,10 @@ public class Player : MonoBehaviour
     }
 
     private void Flash(string color) {
+        // TEMP to test leveling up
+        int currentLevel = PlayerPrefs.GetInt(characterName + "_level", 1);
+        PlayerPrefs.SetInt(characterName + "_level", currentLevel + 1);
+
         StartCoroutine(FlashCharacter(color));
     }
 
