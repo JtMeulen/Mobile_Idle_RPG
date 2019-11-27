@@ -17,4 +17,8 @@ public class SceneLoader : MonoBehaviour
     public void LoadPartyMenu() {
         SceneManager.LoadScene("Party Menu");
     }
+
+    public void LoadSettingsMenu() {
+        SceneManager.LoadScene("Settings Menu");
+    }
 }
