@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class BattleStatus : MonoBehaviour
 {
-    [SerializeField] Text victoryText;
-    [SerializeField] Text defeatedText;
+    [SerializeField] Image victoryDisplay;
+    [SerializeField] Image defeatedDisplay;
 
-    public int charactersAlive = 0;
-    public int enemiesAlive = 0;
+    private int charactersAlive = 0;
+    private int enemiesAlive = 0;
 
     public void AddAliveCharacterCounter() {
         charactersAlive++;
@@ -19,8 +19,7 @@ public class BattleStatus : MonoBehaviour
         charactersAlive--;
 
         if(charactersAlive <= 0) {
-            Debug.Log("Enemies Won!");
-            defeatedText.gameObject.SetActive(true);
+            EndGameScreen("lose");
         }
     }
 
@@ -32,10 +31,28 @@ public class BattleStatus : MonoBehaviour
         enemiesAlive--;
 
         if(enemiesAlive <= 0) {
-            Debug.Log("Players Won!");
-            victoryText.gameObject.SetActive(true);
+            EndGameScreen("win");
         }
     }
 
+    private void EndGameScreen(string battleOutcome) {
+        StartCoroutine(ShowEndOfGameDisplay(battleOutcome));
+    }
+
+    IEnumerator ShowEndOfGameDisplay(string battleOutcome) {
+        Image displayToShow = battleOutcome == "win" ? victoryDisplay : defeatedDisplay;
+
+        displayToShow.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(.5f);
+        displayToShow.transform.GetChild(0).gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(1.5f);
+        if(battleOutcome == "win") {
+            FindObjectOfType<SceneLoader>().LoadWinScreen();
+        } else {
+            FindObjectOfType<SceneLoader>().LoadMap();
+        }
+    }
 
 }
