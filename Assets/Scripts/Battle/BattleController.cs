@@ -17,9 +17,11 @@ public class BattleController : MonoBehaviour
     [SerializeField] Text titleText;
 
     private BattleConfig activeBattleConfig;
+    private BattleStatus battleStatus;
     private string[] battlers;
 
     private void Start() {
+        battleStatus = GetComponent<BattleStatus>();
         SetActiveBattleConfig();
         GetListOfCharactersFromSaveFile();
         LoadCharacters();
@@ -55,6 +57,7 @@ public class BattleController : MonoBehaviour
                 foreach (var config in playerConfigs) {
                     if(config.name == battlers[i]) {
                         playerPrefabs[i].SetPlayerStats(config);
+                        battleStatus.AddAliveCharacterCounter();
                     }
                 }
             }
@@ -65,6 +68,11 @@ public class BattleController : MonoBehaviour
         enemyPrefabs[0].SetEnemyStats(activeBattleConfig.GetEnemy1());
         enemyPrefabs[1].SetEnemyStats(activeBattleConfig.GetEnemy2());
         enemyPrefabs[2].SetEnemyStats(activeBattleConfig.GetEnemy3());
+
+        // TODO: Fix that this is dynamic based on the amount of enemies set
+        for(int i = 0; i < 3; i++) {
+            battleStatus.AddAliveEnemyCounter();
+        }
     }
 
     private void LoadBackground() {

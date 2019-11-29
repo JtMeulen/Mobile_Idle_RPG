@@ -20,23 +20,36 @@ public class Enemy : MonoBehaviour
     [SerializeField] Text maxHealthText;
     [SerializeField] Text currentHealthText;
 
+    private BattleStatus battleStatus;
+    private bool battleActive = true;
+
     private void Start()
     {
+        battleStatus = FindObjectOfType<BattleStatus>();
         SetStartingTextFields();
         StartCoroutine(AttackPlayerCoroutine());
     }
 
     IEnumerator AttackPlayerCoroutine() {
-        while(true) {
+        while(battleActive) {
             yield return new WaitForSeconds(speed);
             var targetPlayer = GetTargetPlayer();
-            targetPlayer.DamagePlayer(strength);
-            Flash("green");
+
+            if(targetPlayer) {
+                targetPlayer.DamagePlayer(strength);
+                Flash("green");
+            }
         }
     }
 
     private Player GetTargetPlayer() {
         var allPlayers = FindObjectsOfType<Player>();
+
+        if(allPlayers.Length <= 0) {
+            battleActive = false;
+            return null;
+        }
+
         return allPlayers[Random.Range(0, allPlayers.Length)];
     }
 
@@ -69,6 +82,7 @@ public class Enemy : MonoBehaviour
 
         if(currentHealth <= 0) {
             currentHealthText.text = 0.ToString();
+            battleStatus.DecreaseAliveEnemyCounter();
             Destroy(gameObject);
         }
     }

@@ -23,23 +23,36 @@ public class Player : MonoBehaviour
     [SerializeField] Text maxManaText;
     [SerializeField] Text currentManaText;
 
+    private BattleStatus battleStatus;
+    private bool battleActive = true;
+
     private void Start()
     {
+        battleStatus = FindObjectOfType<BattleStatus>();
         SetStartingTextFields();
         StartCoroutine(AttackEnemyCoroutine());
     }
 
     IEnumerator AttackEnemyCoroutine() {
-        while(true) {
+        while(battleActive) {
             yield return new WaitForSeconds(speed);
             var targetEnemy = GetTargetEnemy();
-            targetEnemy.DamageEnemy(strength);
-            Flash("green");
+
+            if(targetEnemy) {
+                targetEnemy.DamageEnemy(strength);
+                Flash("green");
+            }
         }
     }
 
     private Enemy GetTargetEnemy() {
         var allEnemies = FindObjectsOfType<Enemy>();
+
+        if(allEnemies.Length <= 0) {
+            battleActive = false;
+            return null;
+        }
+
         return allEnemies[Random.Range(0, allEnemies.Length)];
     }
 
@@ -76,6 +89,7 @@ public class Player : MonoBehaviour
 
         if(currentHealth <= 0) {
             currentHealthText.text = 0.ToString();
+            battleStatus.DecreaseAliveCharacterCounter();
             Destroy(gameObject);
         }
     }
