@@ -1,4 +1,4 @@
-﻿[Ll]ibrary/
+[Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
@@ -34,3 +34,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+dev.txt
+dev.txt.meta

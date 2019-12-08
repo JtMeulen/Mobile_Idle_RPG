@@ -3262,14 +3262,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 260ce643e8cfa4bf19f737db30342965, type: 2}
   battleConfigs:
   - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
-  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
-  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
-  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
-  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
-  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
-  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
-  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
-  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
+  - {fileID: 11400000, guid: 5454adb30f05e4f51bc5cff280bf2b25, type: 2}
+  - {fileID: 11400000, guid: c99419b6f9506458088cfd1e2710e7af, type: 2}
+  - {fileID: 11400000, guid: 72714862cf3574da88e878efd836ae8b, type: 2}
+  - {fileID: 11400000, guid: 02d70ac258ada4c1b93c4a1face46019, type: 2}
+  - {fileID: 11400000, guid: cf5826fe624aa426c85335e435be3167, type: 2}
+  - {fileID: 11400000, guid: a511bb9babd5e4370b26597c10abcdae, type: 2}
+  - {fileID: 11400000, guid: 37061f915ffdf4dbb80d746d39d1f9cf, type: 2}
+  - {fileID: 11400000, guid: 70e5563e1626147faa56b93d76c488e0, type: 2}
   background: {fileID: 1077551521}
   titleText: {fileID: 928066192}
 --- !u!4 &988690405
