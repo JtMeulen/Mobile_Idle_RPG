@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 74039586}
   - component: {fileID: 74039585}
   - component: {fileID: 74039587}
+  - component: {fileID: 74039588}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -397,10 +398,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -438,6 +439,25 @@ MonoBehaviour:
   enemyNameText: {fileID: 230790860}
   maxHealthText: {fileID: 1860425065}
   currentHealthText: {fileID: 446894337}
+--- !u!95 &74039588
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74039584}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &97939969
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +723,7 @@ GameObject:
   - component: {fileID: 167765434}
   - component: {fileID: 167765433}
   - component: {fileID: 167765432}
+  - component: {fileID: 167765435}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Untagged
@@ -763,10 +784,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -789,6 +810,25 @@ Transform:
   m_Father: {fileID: 1634562868}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &167765435
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167765431}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &198944685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,7 +2241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.42613602}
-  m_AnchoredPosition: {x: -0.000061035156, y: 1067.6}
+  m_AnchoredPosition: {x: 0, y: 1067.6}
   m_SizeDelta: {x: 35.8, y: -504.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &644164579
@@ -2836,6 +2876,7 @@ GameObject:
   - component: {fileID: 915405567}
   - component: {fileID: 915405566}
   - component: {fileID: 915405565}
+  - component: {fileID: 915405568}
   m_Layer: 0
   m_Name: Enemy 3
   m_TagString: Untagged
@@ -2896,10 +2937,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -2922,6 +2963,25 @@ Transform:
   m_Father: {fileID: 1634562868}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &915405568
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915405564}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &928066190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3202,14 +3262,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 260ce643e8cfa4bf19f737db30342965, type: 2}
   battleConfigs:
   - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
-  - {fileID: 11400000, guid: ffc12844f98354de08e2700bcbe8e170, type: 2}
-  - {fileID: 11400000, guid: 42632a5bc120944a191f59a4e17aac93, type: 2}
-  - {fileID: 11400000, guid: c5488b191a60e4455ba4c7890f57b6cc, type: 2}
-  - {fileID: 11400000, guid: 48e4a9560f31a41afa98bd672f2e72ee, type: 2}
-  - {fileID: 11400000, guid: 2665eb2a422d34dc4b57007e189ec68c, type: 2}
-  - {fileID: 11400000, guid: 738547ef81075486f814ec68ea41c66b, type: 2}
-  - {fileID: 11400000, guid: dc016cd2a622c4139b9e893d9a478818, type: 2}
-  - {fileID: 11400000, guid: 0efb6202937ff477b91bd2d50905e147, type: 2}
+  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
+  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
+  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
+  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
+  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
+  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
+  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
+  - {fileID: 11400000, guid: 6519b571dfefe49dc9e63c91cc41f40e, type: 2}
   background: {fileID: 1077551521}
   titleText: {fileID: 928066192}
 --- !u!4 &988690405
@@ -4417,7 +4477,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.42613602}
-  m_AnchoredPosition: {x: 0.000061035156, y: -10.599976}
+  m_AnchoredPosition: {x: 0, y: -10.600098}
   m_SizeDelta: {x: 35.8, y: 20.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1455813209

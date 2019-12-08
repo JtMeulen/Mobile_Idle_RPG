@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Animations;
 
 [CreateAssetMenu(menuName = "Enemy Config")]
 public class EnemyConfig : ScriptableObject
@@ -12,7 +13,7 @@ public class EnemyConfig : ScriptableObject
     [SerializeField] float speed;
     [SerializeField] float vitality;
     [SerializeField] float agility;
-    [SerializeField] Sprite battleSprite;
+    [SerializeField] AnimatorController battleAnimator;
 
     public string GetName() { return enemyName; }
     public float GetHealth() { return health; }
@@ -21,5 +22,5 @@ public class EnemyConfig : ScriptableObject
     public float GetSpeed() { return speed; }
     public float GetVitality() { return vitality; }
     public float GetAgility() { return agility; }
-    public Sprite GetBattleSprite() { return battleSprite; }
+    public AnimatorController GetBattleAnimator() { return battleAnimator; }
 }
